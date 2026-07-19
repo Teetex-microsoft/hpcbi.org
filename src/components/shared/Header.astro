@@ -1,0 +1,217 @@
+---
+const programmes = [
+  { name: "Healthy Minds Brighter Futures", href: "/programmes" },
+  { name: "Inclusive Education", href: "/inclusive-education" },
+  { name: "School Impact", href: "/school-impact" },
+  { name: "Government Capacity Building", href: "/government-capacity-building" },
+  { name: "Community Mental Health", href: "/community-mental-health" },
+];
+---
+
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Desktop -->
+
+    <div class="hidden lg:block py-5">
+
+      <!-- Logo -->
+
+      <div class="flex flex-col items-center">
+
+        <img
+          src="/images/logos/hpcbi-logo-circle.png"
+          alt="HPCBI Logo"
+          class="w-16 h-16 object-contain"
+        />
+
+        <h1 class="mt-2 text-2xl font-bold text-slate-900 text-center">
+
+          HealthPsyche and CareBridge Initiatives
+
+        </h1>
+
+        <p class="text-green-600 font-bold text-lg">
+
+          (HPCBI)
+
+        </p>
+
+      </div>
+
+      <!-- Navigation -->
+
+      <nav class="mt-8">
+
+        <ul class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-[17px] font-medium text-slate-700">
+
+          <li>
+            <a href="/" class="hover:text-green-600 transition">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="/about" class="hover:text-green-600 transition">
+              About
+            </a>
+          </li>
+
+          <li class="relative group">
+
+            <button class="hover:text-green-600">
+
+              Programmes ▼
+
+            </button>
+
+            <div class="absolute left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl w-80 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+
+              {programmes.map((programme) => (
+
+                <a
+                  href={programme.href}
+                  class="block px-5 py-4 hover:bg-green-50"
+                >
+                  {programme.name}
+                </a>
+
+              ))}
+
+            </div>
+
+          </li>
+
+          <li>
+            <a href="/gallery" class="hover:text-green-600">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="/school-impact" class="hover:text-green-600">
+              School Impact
+            </a>
+          </li>
+
+          <li>
+            <a href="/news" class="hover:text-green-600">
+              News & Stories
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact" class="hover:text-green-600">
+              Contact
+            </a>
+          </li>
+
+          <li>
+
+            <a
+              href="/support-our-mission"
+              class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Support Our Mission
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+    <!-- Mobile -->
+
+    <div class="lg:hidden py-4">
+
+      <div class="flex flex-col items-center">
+
+        <img
+          src="/images/logos/hpcbi-logo-circle.png"
+          class="w-14 h-14"
+          alt="Logo"
+        />
+
+        <h2 class="mt-2 text-lg font-bold text-center leading-tight">
+
+          HealthPsyche and CareBridge Initiatives
+
+        </h2>
+
+        <p class="text-green-600 font-semibold">
+
+          (HPCBI)
+
+        </p>
+
+      </div>
+
+      <button
+        id="mobileMenuButton"
+        class="mt-4 w-full bg-green-600 text-white rounded-xl py-3 font-semibold"
+      >
+        ☰ Menu
+      </button>
+
+      <nav
+        id="mobileMenu"
+        class="hidden mt-4 rounded-xl bg-gray-50 p-4"
+      >
+
+        <ul class="space-y-3 text-center">
+
+          <li><a href="/">Home</a></li>
+
+          <li><a href="/about">About</a></li>
+
+          <li><a href="/programmes">Healthy Minds Brighter Futures</a></li>
+
+          <li><a href="/inclusive-education">Inclusive Education</a></li>
+
+          <li><a href="/school-impact">School Impact</a></li>
+
+          <li><a href="/government-capacity-building">Government Capacity Building</a></li>
+
+          <li><a href="/community-mental-health">Community Mental Health</a></li>
+
+          <li><a href="/gallery">Gallery</a></li>
+
+          <li><a href="/news">News & Stories</a></li>
+
+          <li><a href="/contact">Contact</a></li>
+
+          <li>
+
+            <a
+              href="/support-our-mission"
+              class="inline-block bg-green-600 text-white px-5 py-3 rounded-xl"
+            >
+              Support Our Mission
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="h-56 lg:h-64"></div>
+
+<script>
+const button = document.getElementById("mobileMenuButton");
+const menu = document.getElementById("mobileMenu");
+
+button?.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>

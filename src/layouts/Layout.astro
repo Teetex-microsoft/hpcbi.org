@@ -1,0 +1,53 @@
+---
+import "../styles/global.css";
+import Footer from "../components/shared/Footer.astro";
+
+interface Props {
+  title?: string;
+}
+
+const {
+  title = "HealthPsyche and CareBridge Initiatives (HPCBI)"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="HealthPsyche and CareBridge Initiatives (HPCBI) is a nonprofit organisation promoting mental wellbeing, public health, Artificial Intelligence (AI), inclusive education and healthier communities."
+  />
+
+  <title>{title}</title>
+
+</head>
+
+<body class="bg-white text-slate-800 antialiased">
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css"
+/>
+
+  <main>
+
+    <slot />
+
+  </main>
+
+  <Footer />
+
+</body>
+
+</html>
